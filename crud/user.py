@@ -1,6 +1,6 @@
 from uuid import uuid4
 
-from sqlalchemy import insert, update, delete, Table  # Table is used for bulk insertion
+from sqlalchemy import insert, update, delete
 from sqlalchemy.future import select
 
 from models import User

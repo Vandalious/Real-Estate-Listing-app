@@ -43,8 +43,8 @@ async def insert_listing(listing: dict) -> dict[str, str]:
     """Insert a new listing inside the database."""
     listing.update({'id': uuid4().hex})  # first add a new random ID to the listing values
     stmt = insert(Listing).values(**listing)
+    
     await db.execute(stmt)
-
     return await transaction(msg=f'Listing successfully added: {listing}')
 
 
@@ -69,7 +69,6 @@ async def delete_listing(id: str) -> dict[str, dict[str, str] | str]:
 
     if affected_row is not None:
         return await transaction(f'Listing successully deleted: {affected_row}')
-    
     return {'NoListingsFoundError': 'No listing was found with this id'}
 
 
@@ -81,7 +80,6 @@ async def delete_user_listings(owner_id: str) -> dict[str, dict[str, str] | str]
 
     if affected_row is not None:
         return await transaction(f'All listings successully deleted')
-    
     return {'NoListingsFoundError': 'No listings exist for the user to be deleted'}
 
 
@@ -93,5 +91,4 @@ async def delete_all_listings() -> dict[str, str]:
 
     if affected_row:
         return await transaction(f'All listings successully deleted')
-    
     return {'NoListingsFoundError': 'No listings exist to be deleted'}
