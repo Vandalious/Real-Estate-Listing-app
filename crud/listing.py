@@ -35,7 +35,6 @@ async def fetch_listing_by_id(id: str) -> dict[str, str]:
     listing = listing.scalar()
     if listing:
         listing = listing.__dict__
-        print(listing)
         return listing
     return {'NoListingsFoundError': 'No listing was found with this id'}
 

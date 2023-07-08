@@ -75,7 +75,7 @@ async def shutdown():
 
 @app.get('/', tags=['Homepage'])
 async def homepage():
-    """Homepage endpoing, nothing to see here."""
+    """Homepage endpoint, nothing to see here."""
     return {'Message': 'Welcome to the homepage'}
 
 
