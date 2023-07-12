@@ -61,7 +61,7 @@ class Config:
     SUPERUSER_PASSWORD = superuser_password
     SUPERUSER_EMAIL = superuser_email
 
-    RATE_LIMIT = 9999
+    RATE_LIMIT = 5
     RATE_LIMIT_EXPIRY_IN_SECONDS = 60
     
     API_PREFIX = '/api/v1'

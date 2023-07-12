@@ -10,7 +10,7 @@ token_path = Config.TOKEN_URL
 
 
 async def limit_requests(request: Request, call_next) -> None | Response:
-    """function for limiting authentication requests based on settings in Config."""
+    """Function for limiting authentication requests based on settings in Config."""
     if request.url.path != token_path:  # no need to limit other requests, only login attempts
         return await call_next(request)
 

@@ -6,6 +6,7 @@ from faker import Faker
 from crud.user import bulk_insert_users
 from authentication.password_handler import hash_password
 
+
 async def generate_fake_users(n: int = 3) -> dict[str, str]:
     """Function for generating and inserting `n` new fake members."""
     fake = Faker()
